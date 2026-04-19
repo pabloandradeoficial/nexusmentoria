@@ -28,16 +28,7 @@ export function LoginForm() {
     });
 
     if (signInError) {
-      const msg = signInError.message.toLowerCase();
-      let errorMessage = 'Não foi possível entrar. Tente novamente.';
-      if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
-        errorMessage = 'E-mail ou senha incorretos.';
-      } else if (msg.includes('email not confirmed')) {
-        errorMessage = 'E-mail não confirmado. Verifique sua caixa de entrada e clique no link de confirmação.';
-      } else if (msg.includes('too many requests')) {
-        errorMessage = 'Muitas tentativas. Aguarde alguns minutos e tente novamente.';
-      }
-      setError(errorMessage);
+      setError(`[DEBUG] ${signInError.message}`);
       setLoading(false);
       return;
     }
