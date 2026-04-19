@@ -28,7 +28,9 @@ export function LoginForm() {
     });
 
     if (signInError) {
-      setError(`[DEBUG] ${signInError.message} | status: ${signInError.status}`);
+      const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '(não definida)';
+      const keySnippet = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '(não definida)').slice(0, 20);
+      setError(`[DEBUG] ${signInError.message} | URL: ${url} | KEY: ${keySnippet}...`);
       setLoading(false);
       return;
     }
