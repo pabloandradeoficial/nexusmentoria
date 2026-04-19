@@ -31,6 +31,7 @@ export type Database = {
           is_published?: boolean;
         };
         Update: Partial<Database['public']['Tables']['videos']['Insert']>;
+        Relationships: [];
       };
       categories: {
         Row: {
@@ -44,6 +45,7 @@ export type Database = {
         };
         Insert: Omit<Database['public']['Tables']['categories']['Row'], 'id' | 'created_at'>;
         Update: Partial<Database['public']['Tables']['categories']['Insert']>;
+        Relationships: [];
       };
       profiles: {
         Row: {
@@ -65,6 +67,7 @@ export type Database = {
           subscription_active?: boolean;
         };
         Update: Partial<Database['public']['Tables']['profiles']['Insert']>;
+        Relationships: [];
       };
       video_progress: {
         Row: {
@@ -77,7 +80,14 @@ export type Database = {
         };
         Insert: Omit<Database['public']['Tables']['video_progress']['Row'], 'id' | 'last_watched_at'>;
         Update: Partial<Database['public']['Tables']['video_progress']['Insert']>;
+        Relationships: [];
       };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
     };
   };
 };
