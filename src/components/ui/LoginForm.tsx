@@ -28,9 +28,16 @@ export function LoginForm() {
     });
 
     if (signInError) {
-      const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? '(não definida)';
-      const keySnippet = (process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? '(não definida)').slice(0, 20);
-      setError(`[DEBUG] ${signInError.message} | URL: ${url} | KEY: ${keySnippet}...`);
+      const msg = signInError.message.toLowerCase();
+      let errorMessage = 'Não foi possível entrar. Tente novamente.';
+      if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
+        errorMessage = 'E-mail ou senha incorretos.';
+      } else if (msg.includes('email not confirmed')) {
+        errorMessage = 'Por favor, confirme seu e-mail antes de entrar.';
+      } else if (msg.includes('too many requests')) {
+        errorMessage = 'Muitas tentativas. Aguarde alguns minutos e tente novamente.';
+      }
+      setError(errorMessage);
       setLoading(false);
       return;
     }

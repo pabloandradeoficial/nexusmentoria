@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client';
 import {
   LayoutGrid,
   PlayCircle,
+  Radio,
   MessageCircle,
   LogOut,
   Menu,
@@ -16,6 +17,7 @@ import { useState } from 'react';
 const navItems = [
   { href: '/dashboard', label: 'Início', icon: LayoutGrid },
   { href: '/dashboard/videos', label: 'Biblioteca', icon: PlayCircle },
+  { href: '/dashboard/lives', label: 'Lives', icon: Radio },
 ];
 
 export function DashboardSidebar({ userName }: { userName: string }) {
