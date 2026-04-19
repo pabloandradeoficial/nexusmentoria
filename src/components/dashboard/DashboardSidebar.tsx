@@ -30,7 +30,7 @@ export function DashboardSidebar({ userName }: { userName: string }) {
     router.refresh();
   }
 
-  const supportNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535999999999';
+  const supportNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535998732804';
   const initials = userName
     .split(' ')
     .map((n) => n[0])

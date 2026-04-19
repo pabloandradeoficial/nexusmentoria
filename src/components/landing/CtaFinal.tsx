@@ -37,7 +37,7 @@ export function CtaFinal() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535999999999'}?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Nexus%20Mentoria`}
+                href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535998732804'}?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20a%20Nexus%20Mentoria`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-2xl bg-white px-8 py-4 text-base font-semibold text-serene-700 shadow-soft transition-all duration-300 hover:shadow-soft-lg hover:-translate-y-0.5 group w-full sm:w-auto"
@@ -99,7 +99,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535999999999'}`}
+                  href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535998732804'}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-anthracite/70 hover:text-serene-600 transition-colors"

@@ -28,11 +28,16 @@ export function LoginForm() {
     });
 
     if (signInError) {
-      setError(
-        signInError.message === 'Invalid login credentials'
-          ? 'E-mail ou senha incorretos.'
-          : 'Não foi possível entrar. Tente novamente.'
-      );
+      const msg = signInError.message.toLowerCase();
+      let errorMessage = 'Não foi possível entrar. Tente novamente.';
+      if (msg.includes('invalid login credentials') || msg.includes('invalid credentials')) {
+        errorMessage = 'E-mail ou senha incorretos.';
+      } else if (msg.includes('email not confirmed')) {
+        errorMessage = 'E-mail não confirmado. Verifique sua caixa de entrada e clique no link de confirmação.';
+      } else if (msg.includes('too many requests')) {
+        errorMessage = 'Muitas tentativas. Aguarde alguns minutos e tente novamente.';
+      }
+      setError(errorMessage);
       setLoading(false);
       return;
     }
@@ -130,7 +135,7 @@ export function LoginForm() {
       <p className="text-center text-xs text-anthracite/60 pt-2">
         Problemas para acessar?{' '}
         <a
-          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535999999999'}`}
+          href={`https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535998732804'}`}
           target="_blank"
           rel="noopener noreferrer"
           className="font-semibold text-serene-600 hover:underline"

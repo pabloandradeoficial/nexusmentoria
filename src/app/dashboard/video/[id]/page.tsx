@@ -43,7 +43,7 @@ export default async function VideoPage({
     .neq('id', video.id)
     .limit(4);
 
-  const supportNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535999999999';
+  const supportNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535998732804';
 
   return (
     <main className="p-5 md:p-8 lg:p-12 max-w-7xl mx-auto">

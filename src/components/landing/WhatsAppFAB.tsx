@@ -12,7 +12,7 @@ export function WhatsAppFAB() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535999999999';
+  const number = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || '5535998732804';
   const message = encodeURIComponent('Olá! Quero saber mais sobre a Nexus Mentoria');
 
   return (
